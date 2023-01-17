@@ -29,7 +29,7 @@ function linkAction(){
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
 
-/*==================== ACCORDION SKILLS ====================*/
+/*==================== skills ====================*/
 const skillsContent = document.getElementsByClassName('skills__content'),
     skillsHeader = document.querySelectorAll('.skills__header')
 
@@ -48,7 +48,7 @@ skillsHeader.forEach((el) =>{
   el.addEventListener('click', toggleSkills)  
 })
 
-/*==================== QUALIFICATION TABS ====================*/
+/*==================== Experiencia ====================*/
 const tabs = document.querySelectorAll('[data-target]'),
       tabContents = document.querySelectorAll('[data-content]')
 
@@ -57,14 +57,14 @@ tabs.forEach(tab =>{
         const target = document.querySelector(tab.dataset.target)
 
         tabContents.forEach(tabContent =>{
-            tabContent.classList.remove('qualification__active')
+            tabContent.classList.remove('experiencia__active')
         })
-        target.classList.add('qualification__active')
+        target.classList.add('experiencia__active')
         
         tabs.forEach(tab =>{
-            tab.classList.remove('qualification__active')
+            tab.classList.remove('experiencia__active')
         })
-        tab.classList.add('qualification__active')
+        tab.classList.add('experiencia__active')
     })
 })
 
@@ -88,10 +88,10 @@ function scrollActive(){
 }
 window.addEventListener('scroll', scrollActive)
 
-/*==================== CHANGE BACKGROUND HEADER ====================*/ 
+/*==================== mudar header do background ====================*/ 
 function scrollHeader(){
     const nav = document.getElementById('header')
-    // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
+    // se o x estiver acima dos 80 remove o scroll header
     if(this.scrollY >= 80) nav.classList.add('scroll-header'); else nav.classList.remove('scroll-header')
 }
 window.addEventListener('scroll', scrollHeader)
@@ -99,38 +99,37 @@ window.addEventListener('scroll', scrollHeader)
 /*==================== SHOW SCROLL UP ====================*/ 
 function scrollUp(){
     const scrollUp = document.getElementById('scroll-up');
-    // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
+    // se o scroll for mais de 560 adiciona a seta de scroll up
     if(this.scrollY >= 560) scrollUp.classList.add('show-scroll'); else scrollUp.classList.remove('show-scroll')
 }
 window.addEventListener('scroll', scrollUp)
 
-/*==================== DARK LIGHT THEME ====================*/ 
+/*==================== Tema dark e light ====================*/ 
 
 const themeButton = document.getElementById('theme-button')
 const darkTheme = 'dark-theme'
 const iconTheme = 'uil-sun'
 
-// Previously selected topic (if user selected)
+// verificar se o user ja escolheu um tema ou nao
 const selectedTheme = localStorage.getItem('selected-theme')
 const selectedIcon = localStorage.getItem('selected-icon')
 
-// We obtain the current theme that the interface has by validating the dark-theme class
+// verificar qual o tema que esta ativo
 const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
 const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun'
 
-// We validate if the user previously chose a topic
+// Se o user ja tiver escolhido um topico
 if (selectedTheme) {
-  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
   document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
   themeButton.classList[selectedIcon === 'uil-sun' ? 'add' : 'remove'](iconTheme)
 }
 
-// Activate / deactivate the theme manually with the button
+// ativar e desativar manualmente (botao)
 themeButton.addEventListener('click', () => {
-    // Add or remove the dark / icon theme
+    // adicionar ou remover o icone do tema dark
     document.body.classList.toggle(darkTheme)
     themeButton.classList.toggle(iconTheme)
-    // We save the theme and the current icon that the user chose
+    // guarda qual o tema escolhido pelo user
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })

@@ -187,7 +187,6 @@ img {
   height: var(--header-height);
   display: flex;
   justify-content: space-between;
-  align-items: right;
 }
 
 .nav__logo,
@@ -210,6 +209,12 @@ img {
 }
 
 @media screen and (max-width: 767px){
+
+  .nav{
+    display: flex;
+    align-items: center;
+  }
+
   .nav__menu{
     position: fixed;
     bottom: -100%;
@@ -221,9 +226,25 @@ img {
     border-radius:  1.5rem 1.5rem 0 0;
     transition: .3s;
   }
-  .nav__logo{
-    margin-top: 15px;
+
+  .contact__container{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
+
+  .contact-info{
+    margin-bottom: 2rem;
+  }
+
+  .contact-form{
+    justify-content: center;
+    justify-items: center;
+    justify-self: center;
+  }
+
 }
 
 
@@ -297,7 +318,7 @@ img {
 }
 
 .home__title{
-  
+
   font-size: var(--big-font-size);
 }
 
@@ -310,6 +331,7 @@ img {
 }
 
 .home__description{
+  margin-top: var(--mb-2);
   margin-bottom: var(--mb-2);
 }
 
@@ -340,7 +362,7 @@ img {
 
 .home__scroll-arrow{
   font-size: 1.25rem;
-  color: homei;
+  color: var(--homeicon-color);
 } 
 
 
@@ -622,33 +644,6 @@ img {
 
 /*==================== Github ====================*/
 
-.portfolio__container{
-  overflow: initial;
-}
-
-.portfolio__content{
-  padding: 0 1.5rem;
-}
-
-.portfolio__img{
-  width: 265px;
-  border-radius: .5rem;
-  justify-self: center;
-}
-
-.portfolio__title{
-  font-size: var(--h3-font-size);
-  margin-bottom: var(--mb-0-5);
-}
-
-.portfolio__description{
-  margin-bottom: var(--mb-0-75);
-}
-
-.portfolio__button:hover .button__icon{
-  transform: translateX(.25rem);
-}
-
 
 
 /*==================== Contactos ====================*/
@@ -790,12 +785,15 @@ img {
   .container{
     margin-left: var(--mb-1);
     margin-right: var(--mb-1);
+    flex-direction: column;
   }
 
   .contact__container{
-    display: flex;
+    display: flex ;
     flex-direction: column;
+    row-gap: 2rem;
   }
+  
   .nav__menu{
     padding: 2rem .25rem 4rem;
   }
@@ -826,10 +824,9 @@ img {
 /* For medium devices */
 @media screen and (min-width: 568px){
 
-  .contact__container{
+.contact__container{
     display: flex;
-    flex-direction: column;
-  }
+} 
 
   .home__bg{
     /* order: 1; */
@@ -873,7 +870,6 @@ img {
 
   .header{
     top: 0px;
-    border-top: var(--body-color) 25px solid;
     bottom: initial;
   }
 
@@ -965,7 +961,7 @@ img {
   }
 
   .footer__container{
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   .footer__bg{
     padding: 3rem, 0 3.5rem;

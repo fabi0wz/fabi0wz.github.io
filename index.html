@@ -4,11 +4,15 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        <!--==================== BOOTSTRAP ====================-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
         <!--==================== ICONS ====================-->
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
         
         <!--==================== CSS ====================-->
         <link rel="stylesheet" href="assets/css/styles.css">
+    
         
         <title>Curriculo Fábio Gonçalves</title>
     </head>
@@ -116,7 +120,7 @@
                             <h1 class="home__title">Olá, Sou o Fábio</h1>
                             <h3 class="home__subtitle">Estudante Programação</h3>
                             <p class="home__description">Experiência em design gráfico e webdesign, atualmente a estudar programação de Sistemas de Informação </p>
-                            <a href="#contact" class="button button--flex">Contactem-me<i class="uil uil-message button__icon"></i>
+                            <a href="#Contacto" class="button button--flex">Contactem-me<i class="uil uil-message button__icon"></i>
                             </a>
                                 <div class="home__scroll">
                                     <a href="#about" class="home__scroll-button button--flex">
@@ -525,24 +529,30 @@
                 <h2 class="section__title">Github</h2>
                 <span class="section__subtitle">My github</span>
 
-                <div class="portfolio__container container">
-                    <div>
-                        <!--==================== projeto 1 ====================-->
-                        <div class="portfolio__content grid">
-                            <img src="assets/images/fotoperfil.png" alt="" class="portfolio__img">
-
-                            <div class="portfolio__data">
-                                <h3 class="portfolio__title">C++ mini POS</h3>
-                                <p class="portfolio__description">simple POS with basic functions</p>
-
-                                <a href="#" class="button button--flex button--small portfolio__button">
-                                    demo
-                                    <i class="uil uil-arrow-right button__icon"></i>
-                                </a>
-                            </div>
-                        </div>
+                <div id="carouselExampleFade" class="carousel slide carousel-fade">
+                    <div class="carousel-inner">
+                      <div class="d-flex align-items-center justify-content-center carousel-item active">
+                        <a href="https://github.com/fabi0wz/Simple-POS-for-a-store-exercise-" target="_blank">
+                            <img src="assets/images/github1.png" class="img-fluid w-80" alt="...">
+                        </a>
+                      </div>
+                      <div class="d-flex align-items-center justify-content-center carousel-item">
+                        <a href="https://github.com/fabi0wz/ExerciciosCPP" target="_blank">
+                            <img src="assets/images/github2.png" class="img-fluid w-80" alt="...">
+                        </a>
+                      </div>
                     </div>
-                </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="visually-hidden">Next</span>
+                    </button>
+                  </div>
+                
+
             </section>
 
             <!--==================== CONTACTOS ====================-->
@@ -552,10 +562,9 @@
 
                 <div class="contact__container">
 
-                    <div class="contact-icons">
+                    <div class="contact-info">
                         <div class="contact__information">
                             <i class="uil uil-phone contact__icon"></i>
-
                             <div>
                                 <h3 class="contact__title">Numero Telemovel</h3>
                                 <span class="contact__subtitle">936 270 893</span>
@@ -584,28 +593,28 @@
                     </div>
 
                     <div class="contact-form">
-                        <form action="" class="contact__form grid">
+                        <form action="form-handler.php" class="contact__form grid">
                             <div class="contact__inputs grid">
                                 <div class="contact__content">
                                     <label for="" class="contact__label">Name</label>
-                                    <input type="text" class="contact__input">
-                                </div>
+                                    <input type="text" class="contact__input" name="name">
+                                </div                    v>
                                 <div class="contact__content">
                                     <label for="" class="contact__label">Email</label>
-                                    <input type="email" class="contact__input">
+                                    <input type="email" class="contact__input" name="email">
                                 </div>
                             </div>
                             <div class="contact__content">
                                 <label for="" class="contact__label">Empresa</label>
-                                <input type="text" class="contact__input">
+                                <input type="text" class="contact__input" name="company">
                             </div>
                             <div class="contact__content">
                                 <label for="" class="contact__label">Message</label>
-                                <textarea name="" id="" cols="0" rows="7" class="contact__input"></textarea>
+                                <textarea name="" id="" cols="0" rows="7" class="contact__input" name="message"></textarea>
                             </div>
 
                             <div>
-                                <a href="#" class="button button--flex">
+                                <a href="mailto:youremail@example.com?subject=Form Submission&body=Name: {$name}%0AEmail: {$email}%0ACompany: {$company}%0AMessage: {$message}" class="button button--flex">
                                     Send Message
                                     <i class="uil uil-message button__icon"></i>
                                 </a>
@@ -626,28 +635,13 @@
                         <h1 class="footer__title">Fábio</h1>
                         <span class="footer__subtitle">Fullstack Developer</span>
                     </div>
-
-                    <ul class="footer__links">
-                        <li>
-                            <a href="#services" class="footer__link">Services</a>
-                        </li>
-                        <li>
-                            <a href="#portfolio" class="footer__link">Portfolio</a>
-                        </li>
-                        <li>
-                            <a href="#contact" class="footer__link">Contactos</a>
-                        </li>
-                    </ul>
-
+                    
                     <div class="footer__socials">
-                        <a href="" target="_blank" class="footer__social">
-                            <i class="uil uil-facebook-f"></i>
+                        <a href="https://github.com/fabi0wz" target="_blank" class="footer__social">
+                            <i class="uil uil-github"></i>
                         </a>
-                        <a href="" target="_blank" class="footer__social">
-                            <i class="uil uil-instagram"></i>
-                        </a>
-                        <a href="" target="_blank" class="footer__social">
-                            <i class="uil uil-twitter-alt"></i>
+                        <a href="https://www.linkedin.com/in/fabiowz/" target="_blank" class="footer__social">
+                            <i class="uil uil-linkedin"></i>
                         </a>
                     </div>
                 </div>

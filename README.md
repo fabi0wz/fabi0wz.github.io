@@ -1,2 +1,0 @@
-"# NovoCV" 
-"# novocv-website" 

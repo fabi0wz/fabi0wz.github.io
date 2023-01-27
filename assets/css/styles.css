@@ -170,11 +170,6 @@ img {
 }
 
 /*==================== LAYOUT ====================*/
-.container{
-  max-width: 768px;
-  margin-left: var(--mb-1-5);
-  margin-right: var(--mb-1-5);
-}
 
 .grid{
   display: grid;
@@ -875,7 +870,7 @@ img {
   .skills__container,
   .portfolio__content,
   .footer__container{
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
   }
 
   .experiencia__sections{

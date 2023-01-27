@@ -4,15 +4,22 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+        
         <!--==================== BOOTSTRAP ====================-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
         <!--==================== ICONS ====================-->
         <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-        
         <!--==================== CSS ====================-->
         <link rel="stylesheet" href="assets/css/styles.css">
-    
+        <!--==================== MAILJS ====================-->
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+        <script type="text/javascript">
+            (function () {
+                emailjs.init("_qV6sD_6mFemqYlgM");
+            })();
+        </script>
+        
         
         <title>Curriculo Fábio Gonçalves</title>
     </head>
@@ -132,18 +139,17 @@
                                         <i class="uil uil-mouse-alt home__scroll-mouse"></i>
                                         <span class="home__scroll-name">Scroll down</span>
                                         <i class="uil uil-arrow-down home__scroll-arrow"></i> 
-                            
+                                        
                                     </a>
                                 </div>
-
+                                
+                            </div>
+                            
+                            
+                            
+                            
                         </div>
-
-                    
-
-                    
-                </div>
-            </section>
-
+                    </section>
             <!--==================== SOBRE ====================-->
           <section class="about section" id="Sobre">
             <h2 class="section__title">Sobre Mim</h2>
@@ -598,37 +604,66 @@
                     </div>
 
                     <div class="contact-form">
-                        <form action="submit" class="contact__form grid">
+                        <div class="contact__form grid">
                             <div class="contact__inputs grid">
                                 <div class="contact__content">
                                     <label for="" class="contact__label">Name</label>
-                                    <input type="text" class="contact__input" name="name">
+                                    <input type="text" class="contact__input" id="name" name="name">
                                 </div>
                                 <div class="contact__content">
                                     <label for="" class="contact__label">Email</label>
-                                    <input type="email" class="contact__input" name="email">
+                                    <input type="email" class="contact__input" id="email" name="email">
                                 </div>
                             </div>
                             <div class="contact__content">
-                                <label for="" class="contact__label">Empresa</label>
-                                <input type="text" class="contact__input" name="company">
+                                <label for="" class="contact__label">Assunto</label>
+                                <input type="text" class="contact__input" id="subject" name="subject">
                             </div>
                             <div class="contact__content">
                                 <label for="" class="contact__label">Message</label>
-                                <textarea name="" id="" cols="0" rows="7" class="contact__input" name="message"></textarea>
+                                <textarea name="message" id="message" cols="0" rows="7" class="contact__input"></textarea>
                             </div>
 
                             <div>
-                                <a href="mailto:youremail@example.com?subject=Form Submission&body=Name: {$name}%0AEmail: {$email}%0ACompany: {$company}%0AMessage: {$message}" class="button button--flex">
+                                <button  onclick="realSendEmail()" class="button button--flex">
                                     Send Message
                                     <i class="uil uil-message button__icon"></i>
-                                </a>
+                                </button>
 
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                        </div>
 
                 </div>
+                <!-- =============SCRIPT DO MAILJS PARA ENVIAR EMAIL============= -->
+            <script type="text/javascript">      
+                function realSendEmail(){
+                    if(document.getElementById("email").value==''){
+                    alert("Preencha a caixa de email com um email valido");
+                    }
+                    else{
+                    sendEmail();
+                    }
+                    return false;
+                }
+
+                function sendEmail() {
+                    let templateParams = {
+                    name: document.getElementById("name").value,
+                    email: document.getElementById("email").value,
+                    subject: document.getElementById("subject").value,
+                    message: document.getElementById("message").value
+                    };
+                    
+                    emailjs.send("service_kv9s9ts", "template_oi45l2i", templateParams).then(function(response) {
+                        alert("Mensagem enviada", response.text);
+                    },
+                    function (error) {
+                        alert("Erro...");
+                    }
+                    );
+                }
+                </script>    
             </section>
         </main>
 
@@ -661,5 +696,7 @@
 
         <!--==================== MAIN JS ====================-->
         <script src="assets/js/main.js"></script>
-    </body>
+
+        
+    </body>  
 </html>

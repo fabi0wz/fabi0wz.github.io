@@ -149,6 +149,7 @@ img {
 }
 
 /*==================== CLASSES UTILIZADAS VARIAS VEZES ====================*/
+
 .section {
   padding: 2rem 0 4rem;
 }
@@ -169,6 +170,10 @@ img {
   text-align: center;
 }
 
+.container{
+  align-items: center;
+  justify-content: center;
+}
 /*==================== LAYOUT ====================*/
 
 .grid{
@@ -427,6 +432,12 @@ img {
 
 /*==================== Sobre ====================*/
 
+.about__data{
+  max-width: 768px;
+  margin-left: var(--mb-1-5);
+  margin-right: var(--mb-1-5);
+}
+
 .about__img{
   width: 200px;
   border-radius: .5rem;
@@ -469,13 +480,9 @@ img {
 
 
 /*==================== SKILLS ====================*/
-
-.skills__container{
-  row-gap: 0;
-}
-
 .skills__header{
   display: flex;
+  justify-content: center;
   align-items: center;
   margin-bottom: var(--mb-2-5);
   cursor: pointer;
@@ -866,10 +873,7 @@ img {
     justify-self: center;
   }
 
-  .about__container,
-  .skills__container,
-  .portfolio__content,
-  .footer__container{
+  .about__container{
     display: flex;
   }
 
@@ -962,6 +966,8 @@ img {
   }
   .about__info{
     justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .about__buttons{

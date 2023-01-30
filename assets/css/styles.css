@@ -157,7 +157,6 @@ img {
 
 .section__title {
   font-size: var(--h1-font-size);
-  color: var(--title-color);
 }
 
 .section__subtitle {
@@ -169,12 +168,13 @@ img {
 .section__title, 
 .section__subtitle {
   text-align: center;
-  color: var(--first-color);
+  color: var(--title-color);
 }
 
 .container{
   align-items: center;
   justify-content: center;
+  width: 85vw;
 }
 /*==================== LAYOUT ====================*/
 

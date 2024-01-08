@@ -570,6 +570,34 @@ img {
   width: 1%;
 } */
 
+.skills_95{
+    width: 95%;
+
+}
+.skills_90{
+  width: 90%;
+}
+.skills_85{
+    width: 85%;
+
+}
+.skills_80{
+  width: 80%;
+}
+.skills_75{
+    width: 75%;
+
+}
+.skills_70{
+  width: 70%;
+}
+.skills_65{
+    width: 65%;
+}
+.skills_60{
+  width: 60%;
+}
+
 .skills__illustrator{
   width: 97%;
 }
@@ -609,6 +637,8 @@ img {
   font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
   cursor: pointer;
+    color: var(--homeicon-color-alt);
+
 }
 
 .experiencia__button:hover{
@@ -669,19 +699,12 @@ img {
 }
 
 .experiencia__button.experiencia__active{
-  color: var(--homeicon-color-alt);
+  color: rgb(21, 21, 22);
 }
 
 
 /*==================== Github ====================*/
 
-.carousel-control-next-icon{
-  margin-right: 10vw;
-}
-
-.carousel-control-prev-icon{
-  margin-left: 10vw;
-}
 
 /*==================== Contactos ====================*/
 .contact__container{

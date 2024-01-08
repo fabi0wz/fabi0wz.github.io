@@ -705,6 +705,10 @@ img {
 
 /*==================== Github ====================*/
 
+.github{
+    display: flex;
+    flex-direction: column;
+}
 
 /*==================== Contactos ====================*/
 .contact__container{
